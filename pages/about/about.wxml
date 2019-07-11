@@ -1,0 +1,4 @@
+<image class="about"  />
+<navigator class="nav" target="miniProgram" app-id="wxa2d8a48bcb98ce14" open-type="navigate">
+  <image class="vendor" src="/images/book/quality.png"></image>
+</navigator> 

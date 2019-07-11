@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "os-like": "/components/like/index",
+    "os-movie": "/components/classic/movie/index",
+    "os-music": "/components/classic/music/index",
+    "os-essay": "/components/classic/essay/index",
+    "os-episode": "/components/episode/index",
+    "os-navigator": "/components/navigator/index",
+    "os-button": "/components/image_button/index"
+  }
+}

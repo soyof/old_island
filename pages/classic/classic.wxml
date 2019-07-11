@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="header">
+    <os-episode class="episode" index="{{ classic.index }}" />
+    <view class="like-container">
+      <os-like class="like" bind:like="handleOnLike" like="{{ likeStatus }}" count="{{ favNum }}" />
+      <os-button class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png" />
+      </os-button>
+    </view>
+  </view>
+  <os-movie wx:if="{{ classic.type === 100 }}" img="{{ classic.image }}" content="{{ classic.content }}" />
+  <os-music wx:if="{{ classic.type === 200 }}" src="{{ classic.url }}" title="{{ classic.title }}" img="{{ classic.image }}" content="{{ classic.content }}" />
+  <os-essay wx:if="{{ classic.type === 300 }}" img="{{ classic.image }}" content="{{ classic.content }}" />
+  <os-navigator bind:left="handleLeft" bind:right="handleRight" class="navigator" first="{{ first }}" latest="{{ latest }}" title="{{ classic.title }}" />
+</view>

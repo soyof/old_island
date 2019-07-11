@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "os-tag": "/components/tag/index",
+    "os-like": "/components/like/index",
+    "os-mask": "/components/mask/index",
+    "os-button": "/components/image_button/index"
+  }
+}

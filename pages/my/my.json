@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "os-button": "/components/image_button/index",
+    "os-preview": "/components/preview/index"
+  }
+}

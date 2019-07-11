@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "os-tag": "/components/tag/index",
+    "os-book": "/components/book/index",
+    "os-loading": "/components/loading/index"
+  }
+}

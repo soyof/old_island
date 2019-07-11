@@ -1,0 +1,18 @@
+<view class="container" wx:if="{{ !searchFlag }}">
+  <view class="header">
+    <view class="box" bind:tap="handleShowSearch">
+      <image src="/images/icon/search.png" />
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <image class="head-img" src="/images/book/quality.png" />
+    <view class="books-container">
+      <block wx:for="{{ bookList }}" wx:for-item="items" wx:key="id" >
+        <os-book book="{{ items }}" />
+      </block>
+    </view>
+  </view>
+</view>
+
+<os-search more="{{ more }}" wx:else bind:cancel="handleCancelSearch" />

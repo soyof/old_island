@@ -1,0 +1,5 @@
+<view class="container">
+  <image class="movie_img" src="{{ img }}" />
+  <image class="movie_dianying" src="images/essay@tag.png" />
+  <text class="content">{{ content }}</text>
+</view>

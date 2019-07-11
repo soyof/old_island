@@ -1,0 +1,70 @@
+<wxs src="../../utils/filter.wxs" module="utils"></wxs>
+<view class="container">
+  <view class="head">
+    <image src="{{ bookDetail.image }}"></image>
+    <text class="title">{{ bookDetail.title }}</text>
+    <text class="author">{{ bookDetail.author }}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">短评</text>
+    <view class="comment-container">
+      <block wx:for="{{ utils.limit(comments, 10) }}" wx:for-index="ids" wx:key="content">
+        <os-tag tag-class="{{ utils.highLight(ids) }}" text="{{ item.content }}" wx:if="{{ comments && comments.length !== 0 }}">
+          <text class="num" slot="after">{{ '+' + item.nums }}</text>
+        </os-tag>
+      </block>
+      <text wx:if="{{ comments.length === 0 || !comments }}" class="noneCategory" slot="after">暂无短评</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <text class="headline">内容简介</text>
+    <text class="content" decode="{{true}}">{{ utils.format(bookDetail.summary) }}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">书本信息</text>
+    <view class="detail-container">
+        <view class="vertical description">
+            <text>出版社</text>
+            <text>出版年</text>
+            <text>页数</text>
+            <text>定价</text>
+            <text>装帧</text>
+        </view>
+        <view class="vertical">
+            <text>{{ bookDetail.publisher || '未知' }}</text>
+            <text>{{ bookDetail.pubdate || '未知' }}</text>
+            <text>{{ bookDetail.pages || '未知' }}</text>
+            <text>{{ bookDetail.price || '未知' }}</text>
+            <text>{{ bookDetail.binding || '未知' }}</text>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class="post-container" hidden="{{ posting }}">
+  <view bind:tap="handleShowFakePost" class="post-fake">
+    <text>输入短评</text>
+  </view>
+  <view class="like-container">
+    <os-like bind:like="handleLike" class="like" like="{{ likeStatus }}" count="{{ likeCount }}" />
+    <os-button class="share" class="share-btn" open-type="share">
+      <image class="share" slot="img" src="/images/icon/share.png" />
+    </os-button>
+  </view>
+</view>
+<view class="posting-container" wx:if="{{ posting }}">
+  <view class="post-header">
+    <text wx:if="{{ comments.length !== 0 }}">仅可点击标签+1</text>
+    <text wx:else>暂无短评</text>
+    <text bind:tap="handleCancel" class="cancel">取消</text>
+  </view>
+  <view class="comment-container">
+    <block wx:for="{{ utils.limit(comments, 5) }}" wx:key="content" wx:for-index="ids">
+      <os-tag bind:tapping="handlePostComment" tag-class="{{ utils.highLight(ids) }}" text="{{ item.content }}">
+        <text class="num" slot="after">{{ '+'+item.nums }}</text>
+      </os-tag>
+    </block>
+  </view>
+  <input focus="{{true}}" placeholder-class="placeholderClass" bindconfirm="handlePostComment" class="post" placeholder='短评最多12个字'></input>
+</view>
+<os-mask wx:if="{{ posting }}" />
