@@ -23,7 +23,7 @@
     <view class="like-container">
         <image class="headline" src="/images/my/like.png" />
         <view class="preview-container">
-            <block wx:for="{{ classics }}" wx:key="id">
+            <block wx:for="{{ classics }}" wx:key="">
                 <os-preview bind:tapping="handleJumpToDetail" class="preview" classic="{{item}}" />
             </block>
         </view>

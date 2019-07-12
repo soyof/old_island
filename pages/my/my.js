@@ -37,7 +37,6 @@ Page({
 
   getMyFavor () {
     classicModel.getMyFavor(res => {
-      console.log(res)
       this.setData({
         classics: res
       })
@@ -58,11 +57,11 @@ Page({
     })
   },
 
-  handleJumpToDetail () {
-    const cid = event.detail.cid
-    const type = event.detail.type
+  handleJumpToDetail (e) {
+    const cid = e.detail.cid
+    const type = e.detail.type
     wx.navigateTo({
-      url:`/pages/classic-detail/classic-detail?cid=${cid}&type=${type}`
+      url:`/pages/classic_detail/classic_detail?cid=${cid}&type=${type}`
     })
   },
 
