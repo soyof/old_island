@@ -6,7 +6,8 @@
     "pages/book_detail/book_detail",
     "pages/about/about",
     "pages/course/course",
-    "pages/classic_detail/classic_detail"
+    "pages/classic_detail/classic_detail",
+    "pages/news_detail/news_detail"
   ],
   "requiredBackgroundModes": [
     "audio"

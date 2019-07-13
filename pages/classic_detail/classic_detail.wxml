@@ -1,3 +1,13 @@
-<view class="container">
-  <image src="./a711276e15.jpg"></image>
+<import src="news-items/news-item-template.wxml" />
+<view class='container'>
+  <swiper class='banner' indicator-dots="true" indicator-color="#fff" indicator-active-color="#f01285" autoplay="true" interval="3000" circular="true">
+    <block wx:for="{{newsList}}" wx:key="id" wx:for-item="items">
+      <swiper-item data-id="{{ items.id }}" bindtap="handleTargetForId"><image src="{{ items.imgSrc }}"></image></swiper-item>
+    </block>
+  </swiper>
+  <block wx:for="{{newsList}}" wx:for-item="items" wx:key="items.id">
+    <view catchtap="handleNewsTap" data-id="{{ items.id }}">
+      <template is="newsItem" data="{{ ...items }}" />
+    </view>
+  </block>
 </view>

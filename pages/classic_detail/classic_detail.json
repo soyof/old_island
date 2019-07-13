@@ -1,3 +1,26 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "美文列表",
+  "tabBar": {
+    "color": "#eee",
+    "selectedColor": "#0ff",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/movie",
+        "text": "电影",
+        "iconPath": "/images/tab/dianying.png",
+        "selectedIconPath": "/images/tab/dianying_hl.png"
+      }
+    ]
+  }
 }
